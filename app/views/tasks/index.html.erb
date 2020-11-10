@@ -1,8 +1,14 @@
 
 
-<h1>List de toute les taches</h1>
+<h1>List of all task </h1>
+<%= link_to "create a new task", new_task_path %>
+<ol>
+  <%@tasks.each do |task| %>
+  <% if task.completed %>
+    <li><i class="far fa-check-square"></i><%= link_to task.title, task_path(task) %></li>
+  <% else %>
+    <li><i class="far fa-square"></i><%= link_to task.title, task_path(task) %></li>
+  <% end %>
+  <% end %>
+</ol>
 
-<%@tasks.each do |task| %>
-<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-<label for="vehicle1"><%= link_to task.title, task_path(task) %></label><br>
-<% end %>
