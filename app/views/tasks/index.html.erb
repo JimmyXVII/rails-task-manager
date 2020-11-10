@@ -1,0 +1,8 @@
+
+
+<h1>List de toute les taches</h1>
+
+<%@tasks.each do |task| %>
+<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+<label for="vehicle1"><%= link_to task.title, task_path(task) %></label><br>
+<% end %>
